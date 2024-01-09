@@ -6,13 +6,13 @@ import pandas as pd
 with open('url_list.txt', 'r') as file:
     url_list = list(file.readlines())
 
-#pozbywam się \n
+#getting rid of \n
 for i in range(len(url_list)):
     url_list[i] = url_list[i][:-1]
 
-#sprawdzam czy sa duplikaty i usuwam ewentualne
+#checking if there are any duplicates and deleting them
 url_df = pd.DataFrame(url_list, columns=['url'])
-# print(df.value_counts(), len(df))
+print(df.value_counts(), len(df))
 
 url_df.drop_duplicates(inplace=True)
 
